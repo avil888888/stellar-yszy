@@ -10,5 +10,5 @@
     {"title":"樱花资源","api":"https://m3u8.apiyhzy.com/api.php/provide/vod/","datatype":"json","search":true},
     {"title":"非凡资源","api":"http://api.ffzyapi.com/api.php/provide/vod/","datatype":"json","search":true},
     {"title":"魔爪资源","api":"https://mozhuazy.com/api.php/provide/vod/","datatype":"json","search":true},
-    {"title":"索尼资源","api":"https://suoniapi.com/api.php/provide/vod/","datatype":"xml","search":false}
+    {"title":"索尼资源","api":"https://suoniapi.com/api.php/provide/vod/","datatype":"json","search":false}
 ]
