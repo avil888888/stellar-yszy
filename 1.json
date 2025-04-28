@@ -20,7 +20,7 @@
     {"title":"樱花资源","api":"https://m3u8.apiyhzy.com/api.php/provide/vod/","datatype":"json","search":true},
     {"title":"想看资源","api":"https://m3u8.xiangkanapi.com/api.php/provide/vod/","datatype":"json","search":true},
     {"title":"39影视","api":"https://www.39kan.com/api.php/provide/vod/","datatype":"json","search":true},
-    {"title":"一拳动漫","api":"http://47.97.68.224/api.php/provide/vod/","datatype":"json","search":true},
-    {"title":"酷猫影视","api":"https://www.pgcms10.com/api.php/provide/vod/","datatype":"json","search":true},
-	{"title":"八戒资源","api":"http://cj.bajiecaiji.com/inc/api.php/provide/vod/","datatype":"xml","search":false}
+    {"title":"非凡","api":"http://api.ffzyapi.com/api.php/provide/vod/","datatype":"json","search":true},
+    {"title":"魔爪","api":"https://www.mdzyapi.com/api.php/provide/vod/","datatype":"json","search":true},
+	{"title":"索尼资源","api":"https://suoniapi.com/api.php/provide/vod/","datatype":"xml","search":false}
 ]
