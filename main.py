@@ -41,7 +41,7 @@ class yszfplugin(StellarPlayer.IStellarPlayerPlugin):
     def start(self):
         super().start()
         try:
-            down_url = 'https://g.4ris.xyz/https://raw.githubusercontent.com/simplecelery/stellar-yszy/main/1.json'
+            down_url = 'https://hub.gitmirror.com/https://raw.githubusercontent.com/avil888888/stellar-yszy/main/1.json'
             r = requests.get(down_url,timeout = 10,verify=False) 
             result = r.status_code
             if result == 200:
