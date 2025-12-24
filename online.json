@@ -1,0 +1,407 @@
+[
+    {
+   "id": "dbzy",
+    "name": "豆瓣资源",  
+    "api": "https://dbzy.tv/api.php/provide/vod",
+    "nsfw": false,
+    "type": 0,    
+    "extra": {
+    "gfw": false
+    }
+  },
+  {
+   "id": "wwzy",
+    "name": "旺旺短剧",  
+    "api": "https://wwzy.tv/api.php/provide/vod",
+    "nsfw": false,
+    "type": 0,    
+    "extra": {
+    "gfw": false
+    }
+  },  
+  {
+    "id": "duonaovod",
+    "name": "多瑙影院",
+    "api": "https://www.duonaovod.com",
+    "nsfw": false,
+    "type": 1,
+    "extra": {
+      "gfw": false,
+      "searchLimit": 12,
+      "js": {
+        "category": [
+          {
+            "text": "首页",
+            "id": "/"
+          },
+          {
+            "text": "电影",
+            "id": "1"
+          },
+          {
+            "text": "电视剧",
+            "id": "2"
+          },
+          {
+            "text": "综艺",
+            "id": "3"
+          },
+          {
+            "text": "动漫",
+            "id": "4"
+          },
+          {
+            "text": "短剧",
+            "id": "57"
+          },
+          {
+            "text": "动作片",
+            "id": "6"
+          },
+          {
+            "text": "喜剧片",
+            "id": "7"
+          },
+          {
+            "text": "爱情片",
+            "id": "8"
+          },
+          {
+            "text": "科幻片",
+            "id": "9"
+          },
+          {
+            "text": "恐怖片",
+            "id": "10"
+          },
+          {
+            "text": "剧情片",
+            "id": "11"
+          },
+          {
+            "text": "奇幻片",
+            "id": "30"
+          },
+          {
+            "text": "战争片",
+            "id": "12"
+          },
+          {
+            "text": "犯罪片",
+            "id": "54"
+          },
+          {
+            "text": "动漫电影",
+            "id": "55"
+          },
+          {
+            "text": "伦理片",
+            "id": "34"
+          },
+          {
+            "text": "国产剧",
+            "id": "13"
+          },
+          {
+            "text": "港台剧",
+            "id": "14"
+          },
+          {
+            "text": "日韩剧",
+            "id": "15"
+          }
+        ],
+        "home": "const cate=env.get(\"category\");const page=env.get(\"page\");if(cate==\"/\"){const $=utils_1.kitty.load(await(0,utils_1.req)(env.baseUrl));const cards=$(\".conch-ctwrap .container\").toArray().map(item=>{const _title=$(item).find(\".hl-rb-title\").toArray();if(!_title.length)return null;const title=$(_title[0]).text().trim();const isCard=$(item).find(\".hl-vod-list\").hasClass(\"swiper-wrapper\");const list=$(item).find(\".hl-row-box .hl-list-wrap .hl-list-item\").toArray();const table=list.map(subItem=>{const a=$(subItem).find(\"a\");const id=a?.attr(\"href\")??\"\";const cover=a?.attr(\"data-original\")??\"\";const title=a?.attr(\"title\")??\"\";const remark=a?.find(\".remarks\")?.text().trim();return{id,cover,title,remark}});if(!table.length)return null;return{type:isCard?\"card\":\"list\",title,videos:table}}).filter(item=>!!item);return{type:\"complex\",data:[{type:\"markdown\",extra:{markdown:`\n> 欢迎使用小猫影视(${utils_1.kitty.VERSION})\n> 直播类软件和直播点播源:\n> 123网盘: https://www.123pan.com/s/pbdPjv-cwPH.html\n> 迅雷云盘: https://pan.xunlei.com/s/VOeR82JqyYEgXc5urtasdRNQA1?pwd=7sk7#\n> 直连网盘: https://my.ksust.com/kstore.htm?aff=16462\n>小猫影视下载: https://xmpro.netlify.app/intro\n`}},...cards]}}const url=`${env.baseUrl}/index.php/vod/type/id/${cate}/page/${page}.html`;const $=utils_1.kitty.load(await(0,utils_1.req)(url));return $(\".hl-vod-list li\").toArray().map(item=>{const a=$(item).find(\"a\");const id=a.attr(\"href\")??\"\";const cover=a.attr(\"data-original\")??\"\";const title=a.attr(\"title\")??\"\";const remark=$(item).find(\".hl-lc-1.remarks\").text()??\"\";return{id,title,cover,remark}})",
+        "detail": "const id=env.get(\"movieId\");const url=`${env.baseUrl}${id}`;const $=utils_1.kitty.load(await(0,utils_1.req)(url));let desc=$(\".hl-col-xs-12.blurb\").text().trim().replace(\"\\u7B80\\u4ECB\\uFF1A\",\"\");if(desc==\"\\u6682\\u65E0\\u7B80\\u4ECB\")desc=\"\";const tabs=$(\".hl-plays-from a\").toArray().map(item=>{return $(item).text().trim()});const _videos=$(\".hl-tabs-box\").toArray().map(item=>{return $(item).find(\"li a\").toArray().map(item=>{const id=$(item).attr(\"href\")??\"\";const text=$(item).text()??\"\";return{id,text}})});const playlist=tabs.map((title,index)=>{const videos=_videos[index];return{title,videos}});return{desc,playlist}",
+        "search": "const wd=env.get(\"keyword\");const page=env.get(\"page\");const url=`${env.baseUrl}/index.php/vod/search/page/${page}/wd/${wd}.html`;const $=utils_1.kitty.load(await(0,utils_1.req)(url));return $(\".hl-one-list li\").toArray().map(item=>{const a=$(item).find(\"a\");const id=a.attr(\"href\")??\"\";const cover=a.attr(\"data-original\")??\"\";const title=a.attr(\"title\")??\"\";return{id,cover,title,remark:\"\"}})",
+        "parseIframe": "const iframe=env.get(\"iframe\");const html=await(0,utils_1.req)(`${env.baseUrl}${iframe}`);const $=utils_1.kitty.load(html);const script=$(\"script\").toArray().filter(item=>{const text=$(item).text().trim();if(text.startsWith(\"var player_aaaa\"))return true})[0];let code=$(script).text().trim().replace(\"var player_aaaa=\",\"\");code=`(${code})`;const unsafeObj=eval(code);if(unsafeObj.encrypt==\"1\"){unsafeObj.url=unescape(unsafeObj.url)}else if(unsafeObj.encrypt==\"2\"){unsafeObj.url=unescape(atob(unsafeObj.url))}return unsafeObj.url"
+      }
+    }
+  },
+  {
+    "id": "mxvod",
+    "name": "MXVOD",
+    "api": "https://www.mxvod.com",
+    "nsfw": false,
+    "type": 1,
+    "extra": {
+      "gfw": false,
+      "searchLimit": 10,
+      "js": {
+        "category": [
+          {
+            "text": "首页",
+            "id": "/"
+          },
+          {
+            "text": "电影",
+            "id": "dianyin"
+          },
+          {
+            "text": "电视剧",
+            "id": "dianshiju"
+          },
+          {
+            "text": "综艺",
+            "id": "zongyi"
+          },
+          {
+            "text": "动漫",
+            "id": "dongman"
+          },
+          {
+            "text": "短剧",
+            "id": "duanju"
+          },
+          {
+            "text": "电影解说",
+            "id": "dianyingjieshuo"
+          },
+          {
+            "text": "直播",
+            "id": "live"
+          },
+          {
+            "text": "体育",
+            "id": "tiyu"
+          }
+        ],
+        "home": "const cate=env.get(\"category\");const page=env.get(\"page\");if(cate==\"/\"){const $=utils_1.kitty.load(await(0,utils_1.req)(env.baseUrl));const banner=$(\".swiper-container .swiper-slide\").toArray().map(item=>{const bb=$(item).find(\".banner\");const id=bb.attr(\"href\")??\"\";const title=bb.attr(\"data-name\")??\"\";const remark=bb.attr(\"data-fname\")??\"\";const cover=env.baseUrl+bb.attr(\"style\").match(/background:\\s*url\\(([^)]+)\\)/)[1];return{id,title,cover,remark}});const list=$(\".content .module\").toArray().map(item=>{if($(item).hasClass(\"homepage_homepage_channelnav\"))return null;const title=$($(item).find(\".module-title\").toArray()[0]).text().trim();const videos=$(item).find(\".module-items .module-item\").toArray().map(item=>{const a=$(item).find(\"a.module-item-title\");const id=a.attr(\"href\")??\"\";const title=a.text().trim();const cover=env.baseUrl+($(item).find(\".module-item-pic img\").attr(\"data-src\")??\"\");const remark=$(item).find(\".module-item-caption\").text().trim();return{id,title,cover,remark}});if(!videos.length)return null;return{type:\"list\",title:title,videos}}).filter(item=>!!item);return{type:\"complex\",data:[{type:\"banner\",videos:banner},{type:\"markdown\",extra:{markdown:`\n> 欢迎使用小猫影视(${utils_1.kitty.VERSION})\n> 直播类软件和直播点播源:\n> 123网盘: https://www.123pan.com/s/pbdPjv-cwPH.html\n> 迅雷云盘: https://pan.xunlei.com/s/VOeR82JqyYEgXc5urtasdRNQA1?pwd=7sk7#\n> 直连网盘: https://my.ksust.com/kstore.htm?aff=16462\n>小猫影视下载: https://xmpro.netlify.app/intro\n`}},...list]}}const url=`${env.baseUrl}/vodshow/${cate}--------${page}---.html`;const $=utils_1.kitty.load(await(0,utils_1.req)(url));return $($(\".module .module-list\").toArray()[0]).find(\".module-items .module-item\").toArray().map(item=>{const a=$(item).find(\"a\");const img=$(item).find(\"img\");const id=a.attr(\"href\")??\"\";let cover=img.attr(\"data-src\")??\"\";cover=`${env.baseUrl}${cover}`;const title=img.attr(\"alt\")??\"\";const remark=$(item).find(\".module-item-caption\").text()??\"\";return{id,title,cover,remark,playlist:[]}})",
+        "detail": "const id=env.get(\"movieId\");const url=`${env.baseUrl}${id}`;const $=utils_1.kitty.load(await(0,utils_1.req)(url));const desc=($($(\".video-info-header .txtone\").toArray().at(-1)).text()??\"\").trim();const tabs=$(\".play-source-tab a, .module-tab-item\").toArray().map(item=>{const name=$(item).attr(\"data-dropdown-value\")??$(item).find(\"span\").attr(\"data-dropdown-value\");return name});const playlistTable=$(\".module-player-list\").toArray().map(item=>{let id=$(item).attr(\"id\")??\"\";id=id.replace(\"glist-\",\"\");const list=$(item).find(\".sort-item a\").toArray().map(item=>{const text=($(item).text()??\"\").trim();const id=$(item).attr(\"href\")??\"\";return{text,id}});return{id:+id,list}});const playlist=tabs.map((item,index)=>{return{title:item,videos:playlistTable[index].list}});return{desc,playlist}",
+        "search": "const wd=env.get(\"keyword\");const page=env.get(\"page\");const url=`${env.baseUrl}/vodsearch/${wd}----------${page}---.html`;const $=utils_1.kitty.load(await(0,utils_1.req)(url));return $(\".module-search-item\").toArray().map(item=>{const a=$(item).find(\"a\");const img=$(item).find(\"img\");const id=a.attr(\"href\")??\"\";const title=a.attr(\"title\")??\"\";let cover=img.attr(\"data-src\")??\"\";cover=`${env.baseUrl}${cover}`;return{id,title,cover,remark:\"\",desc:\"\",playlist:[]}})",
+        "parseIframe": "return utils_1.kitty.utils.getM3u8WithIframe(env)"
+      }
+    }
+  },
+  {
+    "id": "xiaoyakankan",
+    "name": "小鸭看看",
+    "api": "https://xiaoyakankan.com",
+    "type": 1,
+    "nsfw": false,
+    "extra": {
+      "gfw": true,
+      "js": {
+        "category": [
+          {
+            "text": "首页",
+            "id": "/"
+          },
+          {
+            "text": "电影",
+            "id": "10"
+          },
+          {
+            "text": "连续剧",
+            "id": "11"
+          },
+          {
+            "text": "综艺",
+            "id": "12"
+          },
+          {
+            "text": "动漫",
+            "id": "13"
+          },
+          {
+            "text": "福利",
+            "id": "15"
+          }
+        ],
+        "home": "const cate=env.get(\"category\");if(cate==\"/\"){const $=utils_1.kitty.load(await(0,utils_1.req)(env.baseUrl));const titles=$(\".m4-main .m4-meta\").toArray().map(item=>{return $(item).find(\"h3\").text().trim()});const videos=$(\".m4-main .m4-list\").toArray().map(item=>{return $(item).find(\".item\").toArray().map(subItem=>{const id=$(subItem).find(\"a.link\").attr(\"href\")??\"\";const title=$(subItem).find(\"a.title\").text().trim();const remark=$(subItem).find(\".tag2\").text()??\"\";let cover=$(subItem).find(\"img.img\").attr(\"data-src\")??\"\";if(!!cover&&cover.startsWith(\"//\")){cover=`https:${cover}`}return{id,title,cover,remark}})});const list=titles.map((title,index)=>{return{type:\"list\",title,videos:videos[index]}});return{type:\"complex\",data:[{type:\"markdown\",extra:{markdown:`\n> 欢迎使用小猫影视(${utils_1.kitty.VERSION})\n> 直播类软件和直播点播源:\n> 123网盘: https://www.123pan.com/s/pbdPjv-cwPH.html\n> 迅雷云盘: https://pan.xunlei.com/s/VOeR82JqyYEgXc5urtasdRNQA1?pwd=7sk7#\n> 直连网盘: https://my.ksust.com/kstore.htm?aff=16462\n>小猫影视下载: https://xmpro.netlify.app/intro\n`}},...list]}}const page=env.get(\"page\");const url=`${env.baseUrl}/cat/${cate}-${page}.html`;const html=await(0,utils_1.req)(url);const $=utils_1.kitty.load(html);return $(\".m4-list .item\").toArray().map(item=>{const img=$(item).find(\"img.img\");const id=$(item).find(\"a.link\").attr(\"href\")??\"\";const title=img.attr(\"alt\")??\"\";let cover=img.attr(\"data-src\")??\"\";if(!!cover&&cover.startsWith(\"//\")){cover=`https:${cover}`}const remark=$(item).find(\".tag1\").text()??\"\";return{id,title,cover,remark,playlist:[]}})",
+        "detail": "const id=env.get(\"movieId\");const url=`${env.baseUrl}${id}`;const html=await(0,utils_1.req)(url);const $=utils_1.kitty.load(html);const div=$(\".m4-vod\");const img=div.find(\"img.img\");let cover=img.attr(\"src\")??\"\";if(!!cover&&cover.startsWith(\"//\")){cover=`https:${cover}`}let desc=$(\".more .info:last-of-type\").text()??\"\";const kPrefix=\"\\u7B80\\u4ECB\\uFF1A\";if(desc.startsWith(kPrefix)){desc=desc.replace(kPrefix,\"\")}else{desc=\"\"}const playlist=[];for(const script of $(\"body script\").toArray()){let cx=$(script).text()??\"\";if(!cx||!cx.includes(\"var pp\"))continue;cx=cx.replace(\"var pp=\",\"\");if(cx.endsWith(\";\"))cx=cx.slice(0,-1);const unsafeJSObj=eval(`(${cx})`);for(const line of unsafeJSObj.lines){const _id=line[0];const text=line[1];const urls=line[3];const videos=$(`div[data-vod='${_id}'] .list a`).toArray().map((item,index)=>{const text=$(item).text().trim();const idx=+($(item).attr(\"data-sou_idx\")??\"0\");const realUrl=urls[idx];return{text,url:realUrl}});playlist.push({title:text,videos})}}return{cover,desc,playlist}"
+      }
+    }
+  },
+  {
+    "id": "qnys-zbkys",
+    "name": "真不卡影院",
+    "api": "https://m.dgytlt.com",
+    "nsfw": false,
+    "type": 1,
+    "extra": {
+      "gfw": false,
+      "searchLimit": 10,
+      "js": {
+        "category": [
+          {
+            "text": "电影",
+            "id": "1"
+          },
+          {
+            "text": "电视剧",
+            "id": "2"
+          },
+          {
+            "text": "综艺",
+            "id": "3"
+          },
+          {
+            "text": "综艺",
+            "id": "3"
+          },
+          {
+            "text": "动漫",
+            "id": "4"
+          }
+        ],
+        "home": "const cate=env.get(\"category\");const page=env.get(\"page\");const url=`${env.baseUrl}/vodshow/${cate}--------${page}---.html`;const html=await(0,utils_1.req)(url);const $=utils_1.kitty.load(html);return $(\".stui-vodlist li\").toArray().map(item=>{const a=$(item).find(\"a.stui-vodlist__thumb\");const id=a.attr(\"href\")??\"\";const title=a.attr(\"title\")??\"\";const cover=a.attr(\"data-original\")??\"\";const remark=a.find(\".pic-text.text-right\").text()??\"\";return{id,title,cover,remark}})",
+        "detail": "const id=env.get(\"movieId\");const url=`${env.baseUrl}${id}`;const html=await(0,utils_1.req)(url);const $=utils_1.kitty.load(html);const tabs=$(\".nav.nav-tabs li\").toArray().map(item=>{return $(item).text()??\"\"});const map=$(\".stui-panel_bd div.tab-pane\").toArray().map(item=>{return $(item).find(\"a\").toArray().map(_=>{const text=$(_).text()??\"\";const id=$(_).attr(\"href\")??\"\";return{id,text}})});const playlist=tabs.map((title,index)=>{const videos=map[index];return{title,videos}});const a=$(\".stui-pannel-box .stui-vodlist__thumb.picture.v-thumb\");const title=a.attr(\"title\")??\"\";const cover=a.find(\"img\").attr(\"data-original\")??\"\";const desc=$(\".detail.col-pd\").text()??\"\";return{id,title,cover,desc,playlist}",
+        "search": "const page=env.get(\"page\");const wd=env.get(\"keyword\");const url=`${env.baseUrl}/vodsearch/${wd}----------${page}---.html`;const html=await(0,utils_1.req)(url);const $=utils_1.kitty.load(html);return $(\".stui-vodlist__media li\").toArray().map(item=>{const a=$(item).find(\".v-thumb.stui-vodlist__thumb\");const title=a.attr(\"title\")??\"\";const cover=a.attr(\"data-original\")??\"\";const id=a.attr(\"href\")??\"\";const remark=a.find(\".pic-text.text-right\").text()??\"\";return{id,title,cover,remark}})",
+        "parseIframe": "return utils_1.kitty.utils.getM3u8WithIframe(env)"
+      }
+    }
+  },
+  {
+    "id": "niuniuziyuan",
+    "name": "牛牛视频",
+    "api": "https://api.niuniuzy.me/api.php/provide/vod",
+    "nsfw": false,
+    "logo": "https://api.niuniuzy.me/template/niuniuzy/static/images/logo.png",
+    "type": 0,
+    "extra": {
+      "gfw": false
+    }
+  },
+  {
+    "id": "feifanziyuan",
+    "name": "非凡资源",
+    "api": "http://cj.ffzyapi.com/api.php/provide/vod/at/xml",
+    "logo": "http://cj.ffzyapi.com/template/ffzy/static/picture/logo.png",
+    "nsfw": false,
+    "type": 0,
+    "extra": {
+      "gfw": false
+    }
+  },
+  {
+    "id": "py_DianYingTanTang",
+    "name": "电影天堂(T4)",
+    "api": "https://py.doube.eu.org/spider?site=DianYingTanTang",
+    "nsfw": false,
+    "type": 1,
+    "extra": {
+      "template": "t4"
+    }
+  },
+  {
+    "id": "py_Dm84",
+    "name": "动漫巴士(T4)",
+    "api": "https://py.doube.eu.org/spider?site=Dm84",
+    "nsfw": false,
+    "type": 1,
+    "extra": {
+      "template": "t4"
+    }
+  },
+  {
+   "id": "zy360",
+    "name": "360资源",  
+    "api": "https://360zy.com/api.php/provide/vod",
+    "nsfw": false,
+    "type": 0,    
+    "extra": {
+    "gfw": false
+    }
+  },
+  {
+   "id": "maotaizy",
+    "name": "茅台资源",  
+    "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
+    "nsfw": false,
+    "type": 0,    
+    "extra": {
+    "gfw": false
+    }
+  }, 
+  {
+   "id": "ruyi",
+    "name": "如意资源",  
+    "api": "http://cj.rycjapi.com/api.php/provide/vod",
+    "nsfw": false,
+    "type": 0,    
+    "extra": {
+    "gfw": false
+    }
+  },
+  {
+   "id": "lzi",
+    "name": "量子资源站",  
+    "api": "https://cj.lziapi.com/api.php/provide/vod",
+    "nsfw": false,
+    "type": 0,    
+    "extra": {
+    "gfw": false
+    }
+  },
+  {
+   "id": "wujin",
+    "name": "无尽资源",  
+    "api": "https://api.wujinapi.me/api.php/provide/vod",
+    "nsfw": false,
+    "type": 0,    
+    "extra": {
+    "gfw": false
+    }
+  },
+  {
+   "id": "yinghua",
+    "name": "樱花资源",  
+    "api": "https://m3u8.apiyhzy.com/api.php/provide/vod",
+    "nsfw": false,
+    "type": 0,    
+    "extra": {
+    "gfw": false
+    }
+  },
+  {
+   "id": "zuid",
+    "name": "最大资源",  
+    "api": "https://api.zuidapi.com/api.php/provide/vod",
+    "nsfw": false,
+    "type": 0,    
+    "extra": {
+    "gfw": false
+    }
+  },
+  {
+   "id": "jisu",
+    "name": "极速资源",  
+    "api": "https://jszyapi.com/api.php/provide/vod",
+    "nsfw": false,
+    "type": 0,    
+    "extra": {
+    "gfw": false
+    }
+  },
+  {
+   "id": "wolong",
+    "name": "卧龙资源",  
+    "api": "https://wolongzyw.com/api.php/provide/vod",
+    "nsfw": false,
+    "type": 0,    
+    "extra": {
+    "gfw": false
+    }
+  },
+  {
+   "id": "tyyszy",
+    "name": "天涯资源",  
+    "api": "https://tyyszy.com/api.php/provide/vod",
+    "nsfw": false,
+    "type": 0,    
+    "extra": {
+    "gfw": false
+    }
+  },
+  {
+   "id": "bfzy",
+    "name": "暴风资源",  
+    "api": "https://bfzyapi.com/api.php/provide/vod",
+    "nsfw": false,
+    "type": 0,    
+    "extra": {
+    "gfw": false
+    }
+  }
+]
