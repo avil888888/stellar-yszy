@@ -193,7 +193,7 @@
     },
     {
       "key": "csp_AppXY",
-      "name": "🎀️┃星牙┃短剧",
+      "name": "🌵️┃星牙┃短剧",
       "type": 3,"jar": "https://img2.gelonghui.com/library/eadaa-7cea026a-878c-484b-8904-3e1d87a69041.png;md5;eadaaee8e25f5d590dc4f40488207d0d",
       "api": "https://git.yylx.win/raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/py/XYDJ.py",
       "searchable": 1,
@@ -212,8 +212,8 @@
       "filterable": 1
     },
     {
-      "key": "🍉┃︎河马┃短剧",
-      "name": "🍉┃河马┃短剧",
+      "key": "☂️┃︎河马┃短剧",
+      "name": "☂️┃河马┃短剧",
       "type": 3,"jar": "https://img2.gelonghui.com/library/eadaa-7cea026a-878c-484b-8904-3e1d87a69041.png;md5;eadaaee8e25f5d590dc4f40488207d0d",
       "api": "https://git.yylx.win/raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/py/HMDJ.py",
       "searchable": 1,
@@ -221,26 +221,7 @@
       "quickSearch": 1,
       "filterable": 1
     },
-   {
-      "key": "🌵┃︎锦鲤┃短剧",
-      "name": "🌵┃锦鲤┃短剧",
-      "type": 3,"jar": "https://img2.gelonghui.com/library/eadaa-7cea026a-878c-484b-8904-3e1d87a69041.png;md5;eadaaee8e25f5d590dc4f40488207d0d",
-      "api": "https://git.yylx.win/raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/py/JLDJ.py",
-      "searchable": 1,
-      "changeable": 1,
-      "quickSearch": 1,
-      "filterable": 1
-    },
-   {
-      "key": "☂️┃︎金牌┃影视",
-      "name": "☂️┃︎金牌┃影视",
-      "type": 3,"jar": "https://img2.gelonghui.com/library/eadaa-7cea026a-878c-484b-8904-3e1d87a69041.png;md5;eadaaee8e25f5d590dc4f40488207d0d",
-      "api": "https://git.yylx.win/raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/py/JPYS.py",
-      "searchable": 1,
-      "changeable": 1,
-      "quickSearch": 1,
-      "filterable": 1
-    },
+
 
 {"key":"T4-2024热门","name":"音乐-热门MV(T4)","type":4,"api":"https://catbox.n13.club/t9/bili.php?id=2024"},
 
