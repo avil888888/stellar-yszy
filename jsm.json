@@ -162,10 +162,10 @@
       "filterable": 1
     },
     {
-      "key": "🎬┃茅台┃采集",
-      "name": "🎬┃茅台┃采集",
+      "key": "🎬┃甜圈┃短剧",
+      "name": "🎬┃甜圈┃短剧",
       "type": 3,"jar": "https://img2.gelonghui.com/library/eadaa-7cea026a-878c-484b-8904-3e1d87a69041.png;md5;eadaaee8e25f5d590dc4f40488207d0d",
-      "api": "https://raw.githubusercontent.com/avil888888/stellar-yszy/refs/heads/main/mtzy.py",
+      "api": "https://raw.githubusercontent.com/avil888888/NewTVBox-back/refs/heads/main/movie/py/TQDJ.py",
       "searchable": 1,
       "changeable": 1,
       "quickSearch": 1,
@@ -175,7 +175,7 @@
       "key": "🔥️┃锦鲤┃短剧",
       "name": "🔥️┃锦鲤┃短剧",
       "type": 3,"jar": "https://img2.gelonghui.com/library/eadaa-7cea026a-878c-484b-8904-3e1d87a69041.png;md5;eadaaee8e25f5d590dc4f40488207d0d",
-      "api": "https://raw.githubusercontent.com/avil888888/stellar-yszy/refs/heads/main/JLDJ.py",
+      "api": "https://raw.githubusercontent.com/avil888888/NewTVBox-back/refs/heads/main/movie/py/JLDJ.py",
       "searchable": 1,
       "changeable": 1,
       "quickSearch": 1,
