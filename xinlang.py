@@ -181,7 +181,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
                         if v.tag == 'lang':
                             vod_lang = v.text
 
-            temporary = self.custom_RegexGetText(Text=xmlTxt, RegexText=r'<dd flag="xlyun">(.+?)</dd>', Index=1)
+            temporary = self.custom_RegexGetText(Text=xmlTxt, RegexText=r'<dd flag="xlm3u8">(.+?)</dd>', Index=1)
             temporary = temporary.replace('<![CDATA[', '').replace(']]>', '')
             vodItems = self.custom_EpisodesList(temporary)
             joinStr = "#".join(vodItems)
@@ -421,4 +421,5 @@ if __name__ == '__main__':
 # # print(url)
 # m3u8=T.playerContent(flag=vod_play_from,id=url,vipFlags=True)
 # print(m3u8)
+
 
