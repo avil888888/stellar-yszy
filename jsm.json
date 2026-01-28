@@ -180,17 +180,7 @@
       "quickSearch": 1,
       "filterable": 1
     },
-    {
-      "key": "厂长",
-      "name": "🏭┃厂长┃影视",
-      "type": 3,"jar": "https://img2.gelonghui.com/library/eadaa-7cea026a-878c-484b-8904-3e1d87a69041.png;md5;eadaaee8e25f5d590dc4f40488207d0d",
-      "playerType": "2",
-      "api": "csp_Czsapp",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "https://www.czzymovie.com/"
-    },
+ 
     {
       "key": "csp_AppXY",
       "name": "🌵️┃星牙┃短剧",
@@ -222,14 +212,24 @@
       "filterable": 1
     },
    {
-      "key": "☂️┃︎新浪┃采集",
-      "name": "☂️┃新浪┃采集",
+      "key": "🏭┃︎新浪┃采集",
+      "name": "🏭┃新浪┃采集",
       "type": 3,"jar": "https://img2.gelonghui.com/library/eadaa-7cea026a-878c-484b-8904-3e1d87a69041.png;md5;eadaaee8e25f5d590dc4f40488207d0d",
       "api": "https://raw.githubusercontent.com/avil888888/stellar-yszy/refs/heads/main/xinlang.py",
       "searchable": 1,
       "changeable": 1,
       "quickSearch": 1,
       "filterable": 1
+    },
+	 {
+      "key": "麦田",
+      "name": "🏭┃麦田┃影视",
+      "type": 3,"jar": "https://img2.gelonghui.com/library/eadaa-7cea026a-878c-484b-8904-3e1d87a69041.png;md5;eadaaee8e25f5d590dc4f40488207d0d",
+      "api": "https://raw.githubusercontent.com/avil888888/stellar-yszy/refs/heads/main/mtyy.py",
+      "searchable": 1,
+	  "changeable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
     },
 
 {"key":"T4-2024热门","name":"音乐-热门MV(T4)","type":4,"api":"https://catbox.n13.club/t9/bili.php?id=2024"},
