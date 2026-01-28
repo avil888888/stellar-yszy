@@ -108,7 +108,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
 
     def homeVideoContent(self):
         xmlTxt = self.custom_webReadFile(
-            urlStr='https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlyun/at/xml/?ac=list&h=24')
+            urlStr='https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlm3u8/at/xml/?ac=list&h=24')
         tree = et(fromstring(xmlTxt))
         root = tree.getroot()
         listXml = root.iter('list')
@@ -124,7 +124,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         pagecount = 1
         limit = 20
         total = 9999
-        Url = 'https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlyun/at/xml/?ac=list&t={0}&pg={1}'.format(
+        Url = 'https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlm3u8/at/xml/?ac=list&t={0}&pg={1}'.format(
             tid, pg)
         xmlTxt = self.custom_webReadFile(urlStr=Url)
         tree = et(fromstring(xmlTxt))
@@ -159,7 +159,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         vodItems = []
         vod_play_url = []
         try:
-            url = 'https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlyun/at/xml/?ac=detail&ids=' + id
+            url = 'https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlm3u8/at/xml/?ac=detail&ids=' + id
             xmlTxt = self.custom_webReadFile(urlStr=url)
             jRoot = et(fromstring(xmlTxt))
             xmlList = jRoot.iter('list')
@@ -213,7 +213,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         return result
 
     def searchContent(self, key, quick, pg=1):
-        Url = 'https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlyun/at/xml/?ac=list&wd={0}&pg={1}'.format(
+        Url = 'https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlm3u8/at/xml/?ac=list&wd={0}&pg={1}'.format(
             urllib.parse.quote(key), '1')
         xmlTxt = self.custom_webReadFile(urlStr=Url)
         tree = et(fromstring(xmlTxt))
@@ -290,7 +290,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
                 idTxt = idTxt + vod['id'] + ','
             if len(idTxt) > 1:
                 idTxt = idTxt[0:-1]
-                url = 'https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlyun/at/xml/?ac=detail&ids=' + idTxt
+                url = 'https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlm3u8/at/xml/?ac=detail&ids=' + idTxt
                 xmlTxt = self.custom_webReadFile(urlStr=url)
                 jRoot = et(fromstring(xmlTxt))
                 xmlList = jRoot.iter('list')
@@ -378,7 +378,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
     # 取分类
     def custom_classification(self):
         xmlTxt = self.custom_webReadFile(
-            urlStr='https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlyun/at/xml/')
+            urlStr='https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlm3u8/at/xml/')
         tree = et(fromstring(xmlTxt))
         root = tree.getroot()
         classXml = root.iter('class')
@@ -421,3 +421,4 @@ if __name__ == '__main__':
 # # print(url)
 # m3u8=T.playerContent(flag=vod_play_from,id=url,vipFlags=True)
 # print(m3u8)
+
