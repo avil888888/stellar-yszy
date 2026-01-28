@@ -180,7 +180,6 @@
       "quickSearch": 1,
       "filterable": 1
     },
- 
     {
       "key": "csp_AppXY",
       "name": "🌵️┃星牙┃短剧",
@@ -221,17 +220,17 @@
       "quickSearch": 1,
       "filterable": 1
     },
-	 {
-      "key": "麦田",
+		  {
+      "key": "🏭┃︎麦田┃影视",
       "name": "🏭┃麦田┃影视",
       "type": 3,"jar": "https://img2.gelonghui.com/library/eadaa-7cea026a-878c-484b-8904-3e1d87a69041.png;md5;eadaaee8e25f5d590dc4f40488207d0d",
       "api": "https://raw.githubusercontent.com/avil888888/stellar-yszy/refs/heads/main/mtyy.py",
       "searchable": 1,
-	  "changeable": 1,
+      "changeable": 1,
       "quickSearch": 1,
-      "filterable": 1,
+      "filterable": 1
     },
-
+	 
 {"key":"T4-2024热门","name":"音乐-热门MV(T4)","type":4,"api":"https://catbox.n13.club/t9/bili.php?id=2024"},
 
 
