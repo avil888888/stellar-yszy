@@ -137,11 +137,11 @@
         "factoryId": "web-selector",
         "version": 2,
         "arguments": {
-          "name": "量子资源",
+          "name": "豆瓣资源",
           "description": "",
-          "iconUrl": "https://www.dmmiku.com/template/conch/asset/img/favicon.png",
+          "iconUrl": "https://dbzy1.com/template/vipzy/images/logo.png",
           "searchConfig": {
-            "searchUrl": "https://cj.lziapi.com/api.php/provide/vod/?ac=detail&wd={SearchWord}",
+            "searchUrl": "https://dbzy1.com/vodsearch/-------------.html?wd={keyword}&submit=search",
             "searchUseOnlyFirstWord": true,
             "searchRemoveSpecial": true,
             "searchUseSubjectNamesCount": 1,
